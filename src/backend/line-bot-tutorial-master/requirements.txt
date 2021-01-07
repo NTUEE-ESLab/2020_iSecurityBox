@@ -4,3 +4,5 @@ python-dotenv
 pymongo[srv]
 ipaddress
 sockets
+asyncio
+websockets

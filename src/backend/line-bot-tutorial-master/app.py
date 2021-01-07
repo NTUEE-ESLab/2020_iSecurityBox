@@ -54,7 +54,30 @@ line_bot_api.push_message(USER_ID,
 ########################################
 #               SOCKET                 #
 ########################################
+# import asyncio
+# import websockets
 
+# async def echo(websocket, path):
+#     line_bot_api.push_message(USER_ID, 
+#         TextSendMessage(text="echo"))
+#     async for message in websocket:
+#         print(message,'received from client')
+#         greeting = f"Hello {message}!"
+#         await websocket.send(greeting)
+#         print(f"> {greeting}")
+
+#         asyncio.get_event_loop().stop()
+
+# asyncio.get_event_loop().run_until_complete(
+#     websockets.serve(echo, '0.0.0.0', 8765))
+# asyncio.get_event_loop().run_forever()
+
+# line_bot_api.push_message(USER_ID, 
+#     TextSendMessage(text="Done loop"))
+
+########################################
+#               SOCKET                 #
+########################################
 
 # # 監聽所有來自 /callback 的 Post Request
 # @app.route("/callback", methods=['POST'])
@@ -80,7 +103,6 @@ line_bot_api.push_message(USER_ID,
     
 #     line_bot_api.reply_message(event.reply_token, message)
 
-import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
