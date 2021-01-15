@@ -1,2 +1,6 @@
 *.pyc
 old/
+BUILD
+mbed-os
+.build
+projectfiles
